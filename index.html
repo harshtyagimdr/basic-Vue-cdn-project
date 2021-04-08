@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id='Vue-app'>
+        <h1>{{greet('Afternoon')}}</h1>
+        <p>Name: {{name}}</p>
+        <p>Job: {{job}}</p>
+        <a v-bind:href="website">Harsh Tyagi</a>
+        <input type="text" :value="name"/>
+        <p v-html="websiteTag"></p>
+        <h1>Events</h1>
+        <button @click.once="add(1)">Add a Year</button>
+        <button v-on:click="subtract(1)">Subtract a Year</button>
+        <button @dblclick="add(10)">Add 10 Years</button>
+        <button v-on:dblclick="subtract(10)">Subtract 10 Years</button>
+        <p>My age is {{age}}</p>
+        <div id="canvas" v-on:mousemove="updateXY">{{x}},{{y}}</div>
+        <a v-bind:href="website" @click.prevent="click">click on Link Harsh Tyagi</a>
+        <h1>Keyboard Events</h1>
+        <label>Name</label>
+        <input type="text" v-on:keyup.enter="log"  v-model="name"/>
+        <span>{{name}}</span>
+        <label>Age</label>
+        <input type="number" v-on:keyup.alt.enter="log"/>
+       
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
